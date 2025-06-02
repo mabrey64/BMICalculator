@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BMICalculator.MainPage">
 
-    <ScrollView>
+    <Grid>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
@@ -25,12 +25,12 @@
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                x:Name="CalculateBMI"
+                Text="Calculate your BMI" 
+                SemanticProperties.Hint="Runs the calculation of your BMI"
+                Clicked="OnCalculatClick"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
-    </ScrollView>
+    </Grid>
 
 </ContentPage>
