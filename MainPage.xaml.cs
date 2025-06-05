@@ -4,6 +4,8 @@ public partial class MainPage : ContentPage
 {
     // You can use a string to store the selected gender, similar to your working project
     private string selectedGender = "Male"; // Initialize with Male as default selected
+    private int height = 0; // Variable to store height input
+    private int weight = 0; // Variable to store weight input
 
     public MainPage()
     {
@@ -43,5 +45,17 @@ public partial class MainPage : ContentPage
         // For demonstration, display the selected gender.
         // You'll integrate this with your BMI calculation logic later.
         DisplayAlert("Gender Selected", $"You have selected: {selectedGender}", "OK");
+    }
+
+    private void OnHeightChanged(object sender, ValueChangedEventArgs e)
+    {
+        // Handle height input changes if needed
+        // For example, you can validate the input or update UI elements
+    }
+
+    private void OnWeightChanged(object sender, ValueChangedEventArgs e)
+    {
+        // Handle weight input changes if needed
+        // For example, you can validate the input or update UI elements
     }
 }
