@@ -3,57 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BMICalculator.MainPage">
 
-    <Grid>
-        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-            <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
-                <ImageButton
-            Source="male.png"
-            Clicked="OnGenderClick"
-            HeightRequest="100"
-            WidthRequest="100">
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonGroups">
-                            <VisualState x:Name="Normal"/>
-                            <VisualState x:Name="Selected">
-                                <VisualState.Setters>
-                                    <Setter Property="BorderColor" Value="#808080"/>
-                                    <Setter Property="BorderWidth" Value="3"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                </ImageButton>
-                <Label Text="Male" HorizontalOptions="Center"/>
-            </VerticalStackLayout>
+    <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="*">
+        <HorizontalStackLayout Grid.Row="0" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+            <Frame Grid.Column="0"
+                   Padding="20"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   BorderColor="Blue" x:Name="FrameMale">
+                <VerticalStackLayout Spacing="10">
+                    <Image Source="male.png"
+                           HeightRequest="100"
+                           WidthRequest="100"/>
+                    <Label Text="Male"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnGenderTap"/>
+                </Frame.GestureRecognizers>
+            </Frame>
 
-            <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
-                <ImageButton
-            Source="female.png"
-            Clicked="OnGenderClick"
-            HeightRequest="100"
-            WidthRequest="100">
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonGroups">
-                            <VisualState x:Name="Normal"/>
-                            <VisualState x:Name="Selected">
-                                <VisualState.Setters>
-                                    <Setter Property="BorderColor" Value="#808080"/>
-                                    <Setter Property="BorderWidth" Value="3"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                </ImageButton>
-                <Label Text="Female" HorizontalOptions="Center"/>
-            </VerticalStackLayout>
+            <Frame Grid.Column="1"
+                   Padding="20"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   BorderColor="Transparent" x:Name="FrameFemale">
+                <VerticalStackLayout Spacing="10">
+                    <Image Source="female.png"
+                           HeightRequest="100"
+                           WidthRequest="100" />
+                    <Label Text="Female"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnGenderTap"/>
+                </Frame.GestureRecognizers>
+            </Frame>
         </HorizontalStackLayout>
 
         <Button
-                x:Name="CalculateBMI"
-                Text="Calculate your BMI" 
-                SemanticProperties.Hint="Runs the calculation of your BMI"
-                Clicked="OnCalculateClick"
-                HorizontalOptions="Fill" />
+            Grid.Row="2"  x:Name="CalculateBMI"
+            Text="Calculate your BMI"
+            SemanticProperties.Hint="Runs the calculation of your BMI"
+            Clicked="OnCalculateClick"
+            HorizontalOptions="Fill"
+            Margin="20" />
     </Grid>
 
 </ContentPage>
