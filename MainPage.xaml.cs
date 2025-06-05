@@ -9,9 +9,14 @@
             InitializeComponent();
         }
 
-        private void OnCalculatClick(object sender, EventArgs e)
+        private void OnCalculateClick(object sender, EventArgs e)
         {
             
+        }
+
+        private void OnGenderClick(object sender, EventArgs e)
+        {
+
         }
     }
 

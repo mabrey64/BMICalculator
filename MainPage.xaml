@@ -4,33 +4,56 @@
              x:Class="BMICalculator.MainPage">
 
     <Grid>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+            <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                <ImageButton
+            Source="male.png"
+            Clicked="OnGenderClick"
+            HeightRequest="100"
+            WidthRequest="100">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonGroups">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="#808080"/>
+                                    <Setter Property="BorderWidth" Value="3"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+                <Label Text="Male" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
 
-            <Label
-                Text="Hello, World!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+            <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                <ImageButton
+            Source="female.png"
+            Clicked="OnGenderClick"
+            HeightRequest="100"
+            WidthRequest="100">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonGroups">
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BorderColor" Value="#808080"/>
+                                    <Setter Property="BorderWidth" Value="3"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+                <Label Text="Female" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
 
-            <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
-
-            <Button
+        <Button
                 x:Name="CalculateBMI"
                 Text="Calculate your BMI" 
                 SemanticProperties.Hint="Runs the calculation of your BMI"
-                Clicked="OnCalculatClick"
+                Clicked="OnCalculateClick"
                 HorizontalOptions="Fill" />
-        </VerticalStackLayout>
     </Grid>
 
 </ContentPage>
