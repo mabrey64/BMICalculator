@@ -9,7 +9,7 @@
                    Padding="20"
                    CornerRadius="15"
                    HasShadow="True"
-                   BorderColor="Blue" x:Name="FrameMale">
+                   BorderColor="Green" x:Name="FrameMale">
                 <VerticalStackLayout Spacing="10">
                     <Image Source="male.png"
                            HeightRequest="100"
@@ -55,7 +55,7 @@
             <Label HorizontalOptions="Center"
                FontSize="Medium"
                FontAttributes="Bold"
-               Text="{Binding Source={x:Reference HeightSlider}, Path=Value, StringFormat='Height: {0:F1} inches'}" />
+               Text="{Binding Source={x:Reference HeightSlider}, Path=Value, StringFormat='{0:F1}'}" />
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2">
@@ -73,7 +73,7 @@
             <Label HorizontalOptions="Center"
                FontSize="Medium"
                FontAttributes="Bold"
-               Text="{Binding Source={x:Reference WeightSlider}, Path=Value, StringFormat='Weight: {0:F1} pounds'}" />
+               Text="{Binding Source={x:Reference WeightSlider}, Path=Value, StringFormat='{0:F1}'}" />
         </VerticalStackLayout>
 
 
