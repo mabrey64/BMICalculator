@@ -79,13 +79,24 @@
 
         <VerticalStackLayout Grid.Row="3">
             <Button
+                x:Name="ViewBMIResultsButton"
+                Text="View BMI Results"
+                SemanticProperties.Hint="Navigates to the BMI results page"
+                Clicked="OnNextPageClick"
+                HorizontalOptions="Fill"
+                Margin="20" />
+        </VerticalStackLayout>
+
+
+        <!--<VerticalStackLayout Grid.Row="3">
+            <Button
             x:Name="CalculateBMI"
             Text="Calculate your BMI"
             SemanticProperties.Hint="Runs the calculation of your BMI"
             Clicked="OnCalculateClick"
             HorizontalOptions="Fill"
             Margin="20" />
-        </VerticalStackLayout>
+        </VerticalStackLayout>-->
     </Grid>
 
 </ContentPage>

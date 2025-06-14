@@ -4,9 +4,37 @@
              x:Class="BMICalculator.RecommendationResults"
              Title="RecommendationResults">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label Text="Health Recommendations"
+               FontSize="24"
+               HorizontalOptions="Center"
+               Margin="20"/>
+        
+        <Label x:Name="RecommendationLabel"
+               FontSize="18"
+               HorizontalOptions="Center"
+               Margin="20"/>
+        
+        <Button x:Name="ViewHealthTipsButton"
+                Text="View Health Tips"
+                BackgroundColor="Green"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Clicked="OnViewHealthTipsClicked"/>
+
+        <Button x:Name="BacktoBMIResults"
+                Text="Back to BMI Results"
+                BackgroundColor="Gray"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Clicked="OnBackToBMIResultsClicked"/>
+
+        <Button Text="Back to Main Page"
+                BackgroundColor="Gray"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Clicked="OnBackToMainPageClicked"/>
     </VerticalStackLayout>
 </ContentPage>
