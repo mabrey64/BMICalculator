@@ -2,27 +2,26 @@ namespace BMICalculator;
 
 public partial class BMIResults : ContentPage
 {
-    private double currentBMI; // Renamed to avoid confusion with parameter name
-    private string currentSelectedGender; // Renamed to avoid confusion with parameter name
+    private double currentBMI;
+    private string currentSelectedGender;
 
+    // Method that passes through variables brought over from previous pages.
     public BMIResults(double bmi, string selectedGender)
     {
         InitializeComponent();
-        currentBMI = bmi; // Assign passed BMI to the page's field
-        currentSelectedGender = selectedGender; // Assign passed gender to the page's field
+        currentBMI = bmi; 
+        currentSelectedGender = selectedGender;
 
         DisplayBMIResult(currentBMI);
-        ShowBMICategory(currentBMI, currentSelectedGender); // Pass BMI to the category method
+        ShowBMICategory(currentBMI, currentSelectedGender); 
     }
 
     // Displays the numerical BMI result in an alert.
-    // Consider setting a Label's text directly instead of an alert for better UX.
     public void DisplayBMIResult(double bmiValue)
     {
         string bmiResultText = $"Your BMI is: {bmiValue:F2}";
-        // You can update a Label on the page directly like this instead of an alert:
         // ResultLabel.Text = bmiResultText;
-        DisplayAlert("BMI Calculation Result", bmiResultText, "OK");
+        BMILabel.Text = bmiResultText; // Update the BMI Label defined in BMIResults.xaml
     }
 
     // Shows the BMI category text based on BMI and gender.
@@ -50,7 +49,7 @@ public partial class BMIResults : ContentPage
 
     // Event handler for the "View Health Recommendations" button.
     private async void OnRecommendedClicked(object sender, EventArgs e)
-    {
+    { 
         // Navigate to the RecommendationResults page, passing BMI and selectedGender
         await Navigation.PushAsync(new RecommendationResults(currentBMI, currentSelectedGender));
     }

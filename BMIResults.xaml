@@ -9,6 +9,11 @@
                HorizontalOptions="Center"
                Margin="20"/>
         
+        <Label x:Name="BMILabel"
+               FontSize="18"
+               HorizontalOptions="Center"
+               Margin="20"/>
+
         <Label x:Name="ResultLabel"
                FontSize="18"
                HorizontalOptions="Center"

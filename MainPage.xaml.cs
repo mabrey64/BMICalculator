@@ -66,7 +66,8 @@ public partial class MainPage : ContentPage
         // Handle weight input changes if needed. But it is handled in the OnCalculateClick method.
     }
 
-    // Method that displays the health recommendation based on BMI and gender. Commented out as it's not currently used in the UI and used in the BMIResults page instead.
+    // Method that displays the health recommendation based on BMI and gender.
+    // Commented out as it's not currently used in the UI and used in the BMIResults page instead.
     //private string HealthRecommendation()
     //{
     //    string HealthRecommended = "";
